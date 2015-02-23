@@ -1,0 +1,49 @@
+<nl.rnplus.olv.DashboardLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1">
+ 
+    <!--  'Notifications' button -->
+    <Button
+        android:id="@+id/btn_notifications"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/ic_menu_notifications"
+        android:text="@string/main_notifications_btn_text" />
+ 
+    <!--  'Add note...' button -->
+    <Button
+        android:id="@+id/btn_add_note"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/ic_menu_start_conversation"
+        android:text="@string/main_add_note_btn_text" />
+
+    <!--  'Settings' button -->
+    <Button
+        android:id="@+id/btn_settings"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/ic_menu_manage"
+        android:text="@string/main_settings_btn_text" />
+    
+    <!--  'Expert' button -->
+    <Button
+        android:id="@+id/btn_expert"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/ic_menu_find"
+        android:text="@string/main_expert_settings_btn_text" />
+ 
+    <!--  'Plugins' button -->
+    <Button
+        android:id="@+id/btn_plugins"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/ic_menu_set_as"
+        android:text="@string/main_plugin_manager_btn_text" />
+ 
+    <!--  'About' button -->
+    <Button
+        android:id="@+id/btn_about"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/ic_menu_info_details"
+        android:text="@string/main_about_btn_text" />
+ 
+</nl.rnplus.olv.DashboardLayout>

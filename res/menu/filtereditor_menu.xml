@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/menu_filtereditoraddapp"
+        android:title="@string/prefs_filtereditor_menu_add"
+        android:icon="@android:drawable/ic_menu_add"
+        android:showAsAction="always" />
+    <item android:id="@+id/menu_filtereditortoast"
+        android:title="@string/prefs_filtereditor_menu_toast"
+        android:checkable="true"
+        android:showAsAction="never" />
+    <item android:id="@+id/menu_filtereditormode"
+        android:title="@string/prefs_filtereditor_menu_mode"
+        android:icon="@android:drawable/ic_menu_manage" />
+    <item android:id="@+id/menu_filtereditorhelp"
+    	android:title="@string/prefs_filtereditor_menu_help"
+    	android:icon="@android:drawable/ic_menu_help"
+    	android:showAsAction="ifRoom" />
+    	
+</menu>

@@ -1,9 +1,216 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    
+    <!-- General -->
+    <string name="language">en</string>
     <string name="app_name">OpenLiveView</string>
-    <string name="prefs_deviceaddress_key">device.address</string>
-    <string name="prefs_deviceaddress_title">LiveView device</string>
-    <string name="prefs_deviceaddress_summary">Select your LiveView device from the list of paired Bluetooth devices.</string>
-    <string name="notify_service_running">LiveView connected.</string>
+
+	<!-- Version -->
+	<string name="version_code">15</string>
+    <string name="version_name">1.0.3.1</string>
+    <string name="developer_name">RN+</string> <!-- Put your name here when you release your own version of olv -->
+    <!-- When releasing your own version of OLV feel free to change or hide the donation link in the settings menu -->
+    
+    <!--  Main activity -->
+    <string name="title_activity_main">OpenLiveView</string>
+    
+    <!-- Plugin manager -->
+    <string name="title_activity_plugin_manager">Installed plugins</string>
+    
+    <!-- Settings -->
+    <string name="preferences_name">OpenLiveView settings</string>    
+    	<!-- Device -->
+    	<string name="prefs_cat_device_title">Device</string>
+    		<!-- LiveView device -->
+    		<string name="prefs_deviceaddress_key">device.address</string>
+    		<string name="prefs_deviceaddress_title">LiveView device</string>
+   			<string name="prefs_deviceaddress_summary">Select your LiveView device from the list of paired Bluetooth devices.</string>
+    		<!-- Action of Up / Down key -->
+    		
+    		<!-- Clock mode -->
+    		<string name="prefs_clockmode_key">system.clockmode</string>
+    		<string name="prefs_clockmode_title">Clock mode</string>
+    		<string name="prefs_clockmode_12h">Clock will display in 12 hour mode.</string>
+    		<string name="prefs_clockmode_24h">Clock will display in 24 hour mode.</string>
+    	
+    	<!-- Menu -->
+    	<string name="prefs_cat_menu_title">Menu</string>
+    	
+    	<!-- Experimental -->
+    	<string name="prefs_cat_experimental_title">Experimental</string>
+
+		<!-- Features -->
+	    	<string name="prefs_cat_features_title">Features</string>
+	
+		<!-- Advanced -->
+	    	<string name="prefs_cat_advanced_title">Advanced</string>
+    
+    <!-- Advanced settings -->
+    <string name="title_expert_settings_manager">Advanced settings</string>
+    
+    
+    <!-- Accessibility -->
+    <string name="accessibility_service_label">OLV Notifications</string>
+    <string name="accessibility_service_description">This service will display your notifications on the connected LiveView device.</string>
+
+    
+    <string name="prefs_cat_media_title">Media</string>
+    <string name="prefs_cat_notifications_title">Notifications</string>
+    <string name="prefs_cat_other_title">Other features</string>
+    <string name="prefs_cat_phone_title">Incoming call</string>
+    
+    <string name="prefs_menu_notificationfilter_title">Notification filter</string>
+    
+    <string name="prefs_notifications_info">OpenLiveView can display the notifications your phone receives on your LiveView device. To enable OpenLiveView to read your notifications please enable the accessibility service. By clicking on the shortcut below you will be taken directly to the accesibility settings.</string>
+    
+    <string name="prefs_menu_find_my_phone_visible_key">menu.findmyphonevisible</string>
+    <string name="prefs_menu_find_my_phone_visible_title">Find my phone</string>
+    <string name="prefs_menu_find_my_phone_visible_summary">Find your phone by making noise and vibrations.</string>
+
+    <string name="prefs_menu_notifications_visible_key">menu.notificationsvisible</string>
+    <string name="prefs_menu_notifications_visible_title">Menu item</string>
+    <string name="prefs_menu_notifications_visible_summary">Show a menu item that allows you to browse received notifications.</string>    
+
+    <string name="prefs_menu_media_next_key">menu.medianextvisible</string>
+    <string name="prefs_menu_media_next_title">Media: next</string>
+    <string name="prefs_menu_media_next_summary">Go to the next song in your playlist.</string>
+
+    <string name="prefs_menu_media_play_key">menu.mediaplayvisible</string>
+    <string name="prefs_menu_media_play_title">Media: play</string>
+    <string name="prefs_menu_media_play_summary">Play / pause your music.</string>  
+
+    <string name="prefs_menu_media_previous_key">menu.mediapreviousvisible</string>
+    <string name="prefs_menu_media_previous_title">Media: previous</string>
+    <string name="prefs_menu_media_previous_summary">Go to the previous song in your playlist or restart the playing song from the beginning.</string>       
+
+    <string name="prefs_go_to_accessibility_key">link.accessibility</string>
+    <string name="prefs_go_to_accessibility_title">Accessibility</string>
+    <string name="prefs_go_to_accessibility_summary">Shortcut to the accessibility service settings.</string>
+
+    <string name="prefs_donate_key">rn.donate</string>
+    <string name="prefs_donate_title">Donate</string>
+    <string name="prefs_donate_summary">Please help support the development of OpenLiveView!</string>
+
+    <string name="prefs_enablenotificationbuzzer_key">system.enablenotificationbuzzer</string>
+    <string name="prefs_enablenotificationbuzzer_title">Message alert when opening menu</string>
+    <string name="prefs_enablenotificationbuzzer_summary">Activate buzzer when opening menu while a notification is still unread.</string>
+    
+    <string name="prefs_enablenotificationbuzzer2_key">system.enablenotificationbuzzer2</string>
+    <string name="prefs_enablenotificationbuzzer2_title">Alert</string>
+    <string name="prefs_enablenotificationbuzzer2_summary">Makes the LiveView vibrate and blink while displaying a notification the moment its received.</string>
+
+    <string name="prefs_updateunreadcountwhenmenuopens_key">system.updateunreadcountwhenmenuopens</string>
+    <string name="prefs_updateunreadcountwhenmenuopens_title">Update unread items counter</string>
+    <string name="prefs_updateunreadcountwhenmenuopens_summary">Update unread items counter every time the menu opens.</string>
+
+    <string name="prefs_mediaenablemenu_key">media.enablemenu</string>
+    <string name="prefs_mediaenablemenu_title">Media menu</string>
+    <string name="prefs_mediaenablemenu_summary">Enable media menu on long press of action key.</string>
+
+    <string name="prefs_menu_updown_action_key">menu.menuupdownaction</string>
+    <string name="prefs_menu_updown_action_title">Action of Up / Down key</string>
+    <string name="prefs_menu_updown_action_summary">What should the up and down keys do while in the main menu?</string>       
+
+    <string name="prefs_incomingcallnotify_key">system.incomingcallnotify</string>
+    <string name="prefs_incomingcallnotify_title">Notify on incoming call</string>
+    <string name="prefs_incomingcallnotify_summary">Show a message on the liveview when you receive a call.</string>
+    <string name="prefs_incomingcallvibrate_key">system.incomingcallvibrate</string>
+    <string name="prefs_incomingcallvibrate_title">Vibrate on incoming call</string>
+    <string name="prefs_incomingcallvibrate_summary">Vibrate the liveview when you receive a call.</string>  
+
+    <string name="prefs_wipenotifications_key">system.wipenotifications</string>
+    <string name="prefs_wipenotifications_title">Wipe notifications from LiveView</string>
+    <string name="prefs_wipenotifications_summary">Set the action executed when pressing the button in a notification. Enabled: Wipe all notifications in database. Disabled: Add current notification text to simple filter.</string>
+
+    <string name="prefs_cat_actions_title">Actions</string>
+    
+	<string name="prefs_menu_battery_status_key">menu.batterystatusvisible</string>
+	<string name="prefs_menu_battery_status_title">Battery status</string>
+	<string name="prefs_menu_battery_status_summary">Show the phones battery status.</string>
+	
+	<string name="prefs_menu_mediamenubutton_key">menu.mediamenuvisible</string>
+	<string name="prefs_menu_mediamenubutton_title">Media menu</string>
+	<string name="prefs_menu_mediamenubutton_summary">Show the media menu as a button.</string>
+	
+	<string name="prefs_menu_menuvibrationtime_key">menu.menuvibrationtime</string>
+	<string name="prefs_menu_menuvibrationtime_title">Menu vibration time</string>
+	<string name="prefs_menu_menuvibrationtime_summary">This does something with the vibration time when the menu opens.</string>
+	
+	<string name="prefs_menu_initialmenuitemid_key">menu.initialmenuitemid</string>
+	<string name="prefs_menu_initialmenuitemid_title">Initial menu item</string>
+	<string name="prefs_menu_initialmenuitemid_summary">With which item should the menu start? (Provide number from 0 to amount of menu items)</string>
+	
+    <string name="notify_service_running">LiveView connected</string>
+    
+    <string name="prefs_cat_olvversion_title">Other stuff</string>
+
+    <string name="prefs_version_title">Version</string>
+            
+    <string name="menu_settings">Settings</string>
     <string name="menu_viewlog">View log</string>
+    
+	<string name="main_application_text">Welcome to OpenLiveView!</string>
+	<string name="main_settings_btn_text">Settings</string>
+	<string name="main_notifications_btn_text">Notifications</string>
+	<string name="main_add_note_btn_text">Add note&#8230;</string>
+	<string name="main_expert_settings_btn_text">Advanced settings</string>
+	<string name="main_plugin_manager_btn_text">Plugins</string>
+	<string name="main_about_btn_text">About</string>
+	<string name="main_logo_content_desc">OpenLiveView logo</string>
+	<string name="main_help_text">You can configure OpenLiveView by clicking the "Settings" button. Do not forget to enable the Accessibility service for receiving notifications.</string>
+	
+	<string name="wizard_finish_btn_text">Next ></string>
+	<string name="wizard_bluetooth_btn_text">Bluetooth</string>
+	<string name="wizard_intro_text">Please pair your LiveView using the bluetooth settings on your device. When you are done press next and choose your LiveView device from the list.</string>
+	<string name="wizard_intro_android42msg">Android 4.2 is known for having problems with it\'s bluetooth stack. To ensure correct working of OLV please use Android 4.1 or older.</string>
+	
+	
+	<string name="notification_findliveview">Find&#8230;</string>
+	<string name="notification_settings">Settings</string>
+	
+	<string name="plugin_manager_no_plugins_installed">No plugins installed yet.</string>
+	
+	<string name="etc_content_desc">image</string>
+	
+	<string name="error_not_supported_text">OpenLiveView could not read from the list of connected Bluetooth devices. This probably means that your Android rom does not implement the Bluetooth functionality needed by OpenLiveView, please ask for help at http://openliveview.googlecode.com</string>
+	<string name="wizard_initial_setup_btn_text">Manual setup</string>
+	
+	<string name="expertconfig_cancel">Cancel</string>
+	<string name="expertconfig_save">Save</string>
+	<string name="expertconfig_information">Behind \'initial menu item\' you can enter a number from 0 to the amount of menu items you activated. The value is corrected automatically if you enter an impossible value.
+	    Behind \'menu vibration time\' you can enter a value of 0 to 255. This value will be passed on tot the liveview using the menu settings command.
+	    I suggest you leave this value at 0. All notifications of which the full content is part of the string entered in the filter textbox will be ignored.</string>
+	    
+	<string name="plugins_dialog_title">Plugins</string>
+	
+	<string name="debug_function_disabled">This function is not available.</string>
+	
+	<string name="close_btn">Close</string>
+	<string name="ok_btn">OK</string>
+	
+	<string name="add_note_help">Please enter the content of your note</string>
+	
+	<string name="about">"Thank you for using OpenLiveView! This free and open source app was made possible thanks to the following people: Jan Korpegård, basty149, Exception13, TpmKranz, Pedro Veloso and Renze Nicolai. Thank you all for your help."</string>
+	
+	<string name="pluginmanager_popup_wait">Building app list may take a moment&#8230;</string>
+	<string name="pluginmanager_menu_help">Help</string>
+	<string name="pluginmanager_menu_help_text">Here should be a helpful text</string>
+	
+	<!-- TpmKranz -->
+	<string name="prefs_menu_notificationfilter">Filter settings&#8230;</string>
+	<string name="prefs_filtereditor_menu_add">Add app to filter</string>
+	<string name="prefs_filtereditor_menu_toast">Block toast messages</string>
+	<string name="prefs_filtereditor_menu_mode">Set filter mode</string>
+	<string name="prefs_filtereditor_mode_whitelist">Whitelist mode</string>
+	<string name="prefs_filtereditor_mode_blacklist">Blacklist mode</string>
+	<string name="prefs_filtereditor_mode_messagewhite">The filter currently operates in whitelist mode; only notifications from apps that are on the list will be captured by OLV.</string>
+	<string name="prefs_filtereditor_mode_messageblack">The filter currently operates in blacklist mode; notifications from apps that are on the list will not be captured by OLV.</string>
+	<string name="prefs_filtereditor_menu_help">Help</string>
+	<string name="prefs_filtereditor_popup_wait">Building app list may take a moment&#8230;</string>
+	<string name="prefs_filtereditor_list_help">Protip: hit the menu button.</string>
+	<string name="prefs_filtereditor_popup_help">To add an app to the filter, tap the \"Add app to filter\" menu button; to remove it, tap its name in the list. If you want to prevent toast messages from being captured by OLV, check the \"Block toast messages\" menu option. If you want to decide whether your filter list will be used as a blacklist or a whitelist, tap the \"Set filter mode\" menu option.</string>
+	<string name="title_activity_filter_editor">Filter editor</string>
+	<string name="title_activity_app_dialog">Select app to add to filter</string>
+	<string name="backup_title_notification">Notification</string>
+	<string name="backup_title_toast">Toast message</string>
 </resources>

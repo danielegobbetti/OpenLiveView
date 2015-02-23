@@ -1,8 +1,9 @@
 OpenLiveView
 ============
-*An open implementation of Sony's LiveView&trade; protocol.*
 
-This Android application aims to be a complete replacement for the proprietary applications provided by Sony. Currently this project in a very early stage of development, so it is not suitable for daily use.
+*An open implementation of Sony's LiveView protocol.*
+
+This Android application aims to be a complete replacement for the proprietary applications provided by Sony.
 
 Notice
 ------
@@ -10,7 +11,8 @@ The base of this implementation (figuring out the details of the protocol) was d
 
 License
 -------
-    Copyright 2011 Robert Jacob
+    Copyright 2013 Renze Nicolai
+    Original source code: Copyright 2011 Robert Jacob
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

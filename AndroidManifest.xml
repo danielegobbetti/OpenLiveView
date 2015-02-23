@@ -1,43 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    package="net.sourcewalker.olv"
-    android:versionCode="1"
-    android:versionName="alpha">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="nl.rnplus.olv"
+    android:versionCode="15"
+    android:versionName="@string/version_name" android:installLocation="internalOnly">
+        
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" /> <!-- Needed for "Connection" -->
+    <uses-permission android:name="android.permission.VIBRATE" /> <!-- Needed for "Find my phone" -->
+    <uses-permission android:name="android.permission.READ_CONTACTS"/><!-- Needed for "SMS receiver" -->
+	<uses-permission android:name="android.permission.RECEIVE_SMS"/><!-- Needed for "SMS receiver" -->
+	<uses-permission android:name="android.permission.READ_SMS"/><!-- Needed for "SMS receiver" -->
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/><!-- Needed on some devices -->
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"/><!-- Needed for call notify -->
+	<uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE"/>
+	
+	<uses-feature android:name="android.hardware.telephony" android:required="false" /><!-- Needed for "SMS receiver" but not required -->
+	<uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+
     <application
-        android:icon="@drawable/icon"
-        android:label="@string/app_name">
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" android:hardwareAccelerated="true" android:allowBackup="true">
+               
         <activity
             android:name=".LiveViewPreferences"
-            android:label="@string/app_name">
-            <intent-filter>
-                <action
-                    android:name="android.intent.action.MAIN" />
-                <category
-                    android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:label="@string/preferences_name"
+            android:icon="@drawable/ic_menu_manage"
+            android:launchMode="singleInstance">
         </activity>
-        <activity
-            android:name=".LogViewActivity" />
+        
+        <activity android:name=".LogViewActivity" />
+        
+		<activity android:name="nl.rnplus.olv.NotificationViewActivity" />
+		
+        <service android:name=".service.LiveViewService" />
+        
         <service
-            android:name=".service.LiveViewService" />
-        <receiver
-            android:name=".service.BTReceiver">
+            android:name="nl.rnplus.olv.service.GetNotificationService"
+            android:description="@string/accessibility_service_description"
+            android:label="@string/accessibility_service_label"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:exported="false">
             <intent-filter>
-                <action
-                    android:name="android.bluetooth.device.action.ACL_CONNECTED" />
-                <action
-                    android:name="android.bluetooth.device.action.ACL_DISCONNECTED" />
-                <action
-                    android:name="android.bluetooth.device.action.ACL_DISCONNECT_REQUESTED" />
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+        		android:name="android.accessibilityservice"
+       			android:resource="@xml/accessibilityservice" />
+        </service>
+              
+        <receiver
+            android:name="nl.rnplus.olv.service.BTReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.bluetooth.device.action.ACL_CONNECTED" />
+                <action android:name="android.bluetooth.device.action.ACL_DISCONNECTED" />
+                <action android:name="android.bluetooth.device.action.ACL_DISCONNECT_REQUESTED" />
             </intent-filter>
         </receiver>
-        <provider
-            android:name=".data.LiveViewDataProvider"
-            android:authorities="net.sourcewalker.olv" />
+                    
+        <activity
+            android:name="nl.rnplus.olv.MainActivity"
+            android:label="@string/title_activity_main"
+            android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+            
+        <activity
+            android:name="nl.rnplus.olv.ConfigWizardActivity"
+            android:label="@string/title_activity_main"
+            android:launchMode="singleInstance">
+        </activity>
+            
+        <activity
+            android:name="nl.rnplus.olv.PluginManagerActivity"
+            android:label="@string/title_activity_plugin_manager"
+            android:launchMode="singleInstance">
+        </activity>  
+        
+        <activity
+            android:name="nl.rnplus.olv.ExpertConfigActivity"
+            android:label="@string/title_expert_settings_manager"
+            android:launchMode="singleInstance">
+        </activity>    
+
+        <activity 
+            android:name="nl.rnplus.olv.FilterEditor"
+            android:label="@string/title_activity_filter_editor"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|keyboard">
+        </activity> 
+           
+        <activity
+            android:name="nl.rnplus.olv.AppDialog"
+            android:label="@string/title_activity_app_dialog"
+            android:theme="@style/DialogTheme"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|keyboard">
+        </activity>
+                
+        <receiver android:name=".receiver.EventReceiver" android:exported="true">
+			<intent-filter>
+				<action android:name="nl.rnplus.olv.alert.add"></action>
+				<action android:name="android.provider.Telephony.SMS_RECEIVED"></action>
+			</intent-filter>
+		</receiver>
+        
     </application>
-    <uses-sdk
-        android:minSdkVersion="8" />
-    <uses-permission
-        android:name="android.permission.BLUETOOTH" />
+
 </manifest>

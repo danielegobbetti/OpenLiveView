@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string-array name="settings_updown_actions_name">
+ <item>Do nothing</item>
+ <item>Change music volume</item>
+ <item>Blink the led on the LiveView</item>
+</string-array>
+<string-array name="settings_updown_actions_value"> <!--Uses a string-array because of android limitations -->
+ <item>0</item> <!--Interesting link: http://code.google.com/p/android/issues/detail?id=2096#makechanges -->
+ <item>1</item>
+ <item>2</item>
+</string-array>
+</resources>
