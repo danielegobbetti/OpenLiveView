@@ -53,3 +53,4 @@ See the LICENSE file for a complete copy of the license.
 
 
 [adq]: http://adq.livejournal.com/
+[rj]: https://github.com/xperimental/OpenLiveView
